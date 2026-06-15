@@ -4,7 +4,7 @@
 
 ## ✨ Features
 
-- TouchableOpacity
+- Layout and Index
 
 <br>
 
