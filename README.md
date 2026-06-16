@@ -5,7 +5,10 @@
 ## ✨ Features
 
 - Layout and Index
-- Slot
+- Slot tag
+- useFonts and if( !loaded )
+- theme.ts
+- StatusBar tag
 
 <br>
 
