@@ -5,6 +5,7 @@
 ## ✨ Features
 
 - Layout and Index
+- Slot
 
 <br>
 
