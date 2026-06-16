@@ -4,7 +4,8 @@
 
 ## ✨ Features
 
-- TouchableOpacity
+- Layout and Index
+- Slot
 
 <br>
 
