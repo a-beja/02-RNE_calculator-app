@@ -6,4 +6,5 @@ export const Colors = {
     textPrimary: 'white',
     textSecondary: '#666666',
     background: '#000000',
+// se usó as const para que la Colors mostrara key:values al hacer hover
 } as const;

@@ -15,6 +15,7 @@ const RootLayout = () => {
   }
 
   return (
+    // Se usó flex: 1 para rellenar todo el background color.
     <View style={{ backgroundColor: Colors.background, flex: 1 }}>
       <Slot />
 
