@@ -1,13 +1,24 @@
+import { Colors } from '@/constants/theme';
+import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
-import { Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
 
 const RootLayout = () => {
-  return (
-    <View>
-      <Text>Header</Text>
 
+  const [ loaded ] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf')
+  });
+
+  if( !loaded ) {
+    return null; // o también podemos mostrar un splashscreen
+  }
+
+  return (
+    <View style={{ backgroundColor: Colors.background, flex: 1 }}>
       <Slot />
-      <Text>Footer</Text>
+
+      <StatusBar style="light" />
     </View>
   )
 }
