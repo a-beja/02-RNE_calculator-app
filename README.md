@@ -9,6 +9,8 @@
 - useFonts and if( !loaded )
 - theme.ts
 - StatusBar tag
+- Estilos globales con theme.ts
+- Text: numberOfLines, adjustsFontSizeToFit
 
 <br>
 
