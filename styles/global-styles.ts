@@ -1,3 +1,5 @@
+// Y aquí se declaran los grupos de componentes usando los colores globales (2/2)
+
 import { StyleSheet } from 'react-native';
 
 import { Colors } from '@/constants/theme';
@@ -8,6 +10,11 @@ export const globalStyles = StyleSheet.create({
     background: {
         flex: 1,
         backgroundColor: Colors.background,
+    },
+
+    normalText: {
+        color: Colors.textNormal,
+        fontFamily: 'SpaceMono'
     },
 
     calculatorContainer: {
