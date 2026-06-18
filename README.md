@@ -11,6 +11,9 @@
 - StatusBar tag
 - Estilos globales con theme.ts
 - Text: numberOfLines, adjustsFontSizeToFit
+- Interfaces que se extienden  (TextProps)
+- ...rest
+- 
 
 <br>
 
