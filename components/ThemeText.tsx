@@ -12,7 +12,7 @@ interface Props extends TextProps {
 // <ThemeText variant='h1' onPress={() => alert('!')} selectable>
 //    50 x 50
 // </ThemeText>
-const ThemeText = ({ children, variant , ...rest }: Props) => {
+const ThemeText = ({ children, variant = 'h1', ...rest }: Props) => {
   return (
     <Text 
         style={[
