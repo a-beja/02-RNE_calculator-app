@@ -7,7 +7,7 @@ const CalculatorApp = () => {
   return (
     <View style={ globalStyles.calculatorContainer }>
 
-      <ThemeText variant='h1'> 50 x 5000000 </ThemeText>
+      <ThemeText variant='h1'> 50 x 50000000000 </ThemeText>
       <ThemeText variant='h2'> 250 </ThemeText>
       
       {/* Gracias al componente que creé, ThemeText, nos ahorramos esta carpintería sucia */}

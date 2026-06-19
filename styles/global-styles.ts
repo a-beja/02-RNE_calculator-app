@@ -10,11 +10,12 @@ export const globalStyles = StyleSheet.create({
     background: {
         flex: 1,
         backgroundColor: Colors.background,
+        paddingHorizontal: 15,
     },
 
     normalText: {
         color: Colors.textNormal,
-        fontFamily: 'SpaceMono'
+        fontFamily: 'SpaceMono',
     },
 
     calculatorContainer: {
