@@ -18,28 +18,28 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: Colors.background,
     },
 
-    normalText: {
-        color: Colors.textNormal,
-        fontFamily: Fonts.fontFamily
-    },
-
     calculatorContainer: {
         flex: 1,
         justifyContent: 'flex-end',
+        paddingBottom: 20,
+    },
+
+    normalText: {
+        color: Colors.textNormal,
     },
 
     mainResult: {
         color: Colors.textPrimary,
-        fontSize: 60,
-        // textAlign: 'right',
-        fontWeight: '300',
+        fontSize: Fonts.fontSize.large,
+        textAlign: 'right',
+        fontWeight: Fonts.fontWeight.normal,
     },
 
     subResult: {
         color: Colors.textSecondary,
-        fontSize: 30,
-        // textAlign: 'right',
-        fontWeight: '300',
+        fontSize: Fonts.fontSize.normal,
+        textAlign: 'right',
+        fontWeight: Fonts.fontWeight.light,
     },
 
     row: {

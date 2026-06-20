@@ -9,7 +9,7 @@ const CalculatorApp = () => {
     <View style={ globalStyles.calculatorContainer }>
       
       {/* Resultados */}
-      <View>
+      <View style={{ paddingHorizontal: 30, marginBottom: 20}}>
         <ThemeText variant='h1'>50 x 500</ThemeText>
         <ThemeText variant='h2'>250</ThemeText>
       </View>
