@@ -18,7 +18,7 @@ const RootLayout = () => {
 
   return (
     // Se usó flex: 1 para rellenar todo el background color.
-    <View style={ globalStyles.base }>
+    <View style={ globalStyles.background }>
       <Slot />
 
       <StatusBar style="light" />

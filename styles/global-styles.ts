@@ -8,11 +8,9 @@ import { Colors } from '@/constants/theme';
 
 export const globalStyles = StyleSheet.create({
 
-    base: {
+    background: {
         flex: 1,
         backgroundColor: Colors.background,
-        paddingHorizontal: 20,
-        paddingBottom: 20,
     },
 
     normalText: {

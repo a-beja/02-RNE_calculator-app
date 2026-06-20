@@ -11,8 +11,8 @@ const CalculatorApp = () => {
     
       {/* Resultados */}
       <View>
-        <ThemeText variant='h1'> 50 x 500 </ThemeText>
-        <ThemeText variant='h2'> 250 </ThemeText>
+        <ThemeText variant='h1'>50 x 500</ThemeText>
+        <ThemeText variant='h2'>250</ThemeText>
       </View>
       
       {/* Gracias al componente que creé, ThemeText, nos ahorramos esta carpintería sucia */}
