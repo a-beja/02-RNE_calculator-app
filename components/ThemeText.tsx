@@ -16,7 +16,7 @@ const ThemeText = ({ children, variant = 'h1', ...rest }: Props) => {
   return (
     <Text 
         style={[
-            globalStyles.normalText,
+            { color: 'white' },
             variant === 'h1' && globalStyles.mainResult,
             variant === 'h2' && globalStyles.subResult, 
         ]}

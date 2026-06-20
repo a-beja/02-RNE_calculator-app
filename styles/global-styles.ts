@@ -1,23 +1,21 @@
 // Y aquí se declaran los grupos de componentes usando los colores globales (2/2)
 
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 import { Fonts } from '@/constants/fonts';
 import { Colors } from '@/constants/theme';
 
 
+const { width } = Dimensions.get('window');
+const buttonSize = ( width - 80 ) / 4;
+
+
+
 export const globalStyles = StyleSheet.create({
 
-    base: {
+    background: {
         flex: 1,
         backgroundColor: Colors.background,
-        paddingHorizontal: 20,
-        paddingBottom: 20,
-    },
-
-    normalText: {
-        color: Colors.textNormal,
-        fontFamily: Fonts.fontFamily
     },
 
     calculatorContainer: {
@@ -27,17 +25,16 @@ export const globalStyles = StyleSheet.create({
 
     mainResult: {
         color: Colors.textPrimary,
-        fontSize: 70,
-        textAlign: 'right',
-        fontWeight: '400',
+        fontSize: 60,
+        // textAlign: 'right',
+        fontWeight: '300',
     },
 
     subResult: {
         color: Colors.textSecondary,
-        fontSize: 40,
-        textAlign: 'right',
+        fontSize: 30,
+        // textAlign: 'right',
         fontWeight: '300',
-        paddingBottom: 20
     },
 
     row: {
@@ -48,8 +45,8 @@ export const globalStyles = StyleSheet.create({
     },
 
     button: {
-        height: 80,
-        width: 80,
+        height: buttonSize,
+        width: buttonSize,
         backgroundColor: Colors.darkGray,
         borderRadius: 100,
         justifyContent: 'center',
