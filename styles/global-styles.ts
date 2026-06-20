@@ -14,7 +14,6 @@ const buttonSize = ( width - 80 ) / 4;
 export const globalStyles = StyleSheet.create({
 
     background: {
-    background: {
         flex: 1,
         backgroundColor: Colors.background,
     },
