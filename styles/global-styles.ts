@@ -2,26 +2,27 @@
 
 import { StyleSheet } from 'react-native';
 
+import { Fonts } from '@/constants/fonts';
 import { Colors } from '@/constants/theme';
 
 
 export const globalStyles = StyleSheet.create({
 
-    background: {
+    base: {
         flex: 1,
         backgroundColor: Colors.background,
-        paddingHorizontal: 15,
+        paddingHorizontal: 20,
+        paddingBottom: 20,
     },
 
     normalText: {
         color: Colors.textNormal,
-        fontFamily: 'SpaceMono',
+        fontFamily: Fonts.fontFamily
     },
 
     calculatorContainer: {
         flex: 1,
         justifyContent: 'flex-end',
-        paddingBottom: 20,
     },
 
     mainResult: {
@@ -36,5 +37,31 @@ export const globalStyles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'right',
         fontWeight: '300',
+        paddingBottom: 20
     },
+
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 18,
+        paddingHorizontal: 10
+    },
+
+    button: {
+        height: 80,
+        width: 80,
+        backgroundColor: Colors.darkGray,
+        borderRadius: 100,
+        justifyContent: 'center',
+        marginHorizontal: 10,
+    },
+
+    buttonText: {
+        textAlign: 'center',
+        padding: 10,
+        fontSize: 30,
+        color: Colors.textNormal,
+        fontFamily: Fonts.fontFamily,
+        fontWeight: 300
+    }
 });
