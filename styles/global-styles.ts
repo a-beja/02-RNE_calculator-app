@@ -30,6 +30,7 @@ export const globalStyles = StyleSheet.create({
 
     mainResult: {
         color: Colors.textPrimary,
+        fontFamily: Fonts.fontFamily,
         fontSize: Fonts.fontSize.large,
         textAlign: 'right',
         fontWeight: Fonts.fontWeight.normal,
@@ -37,6 +38,7 @@ export const globalStyles = StyleSheet.create({
 
     subResult: {
         color: Colors.textSecondary,
+        fontFamily: Fonts.fontFamily,
         fontSize: Fonts.fontSize.normal,
         textAlign: 'right',
         fontWeight: Fonts.fontWeight.light,
@@ -46,7 +48,7 @@ export const globalStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: 18,
-        paddingHorizontal: 10
+        paddingHorizontal: 20
     },
 
     button: {

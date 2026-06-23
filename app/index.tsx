@@ -16,10 +16,10 @@ const CalculatorApp = () => {
 
       {/* Filas de botones */}
       <View style={ globalStyles.row }>
-        <CalculatorButton label='C'/>
-        <CalculatorButton label='+/-'/>
-        <CalculatorButton label='del'/>
-        <CalculatorButton label='÷'/>
+        <CalculatorButton label='C' color ='lightGray' blackText={true} onPress={() => alert('!')}/>
+        <CalculatorButton label='+/-' color ='lightGray' blackText={true} onPress={() => alert('!')}/>
+        <CalculatorButton label='del' color ='lightGray' blackText={true} onPress={() => alert('!')}/>
+        <CalculatorButton label='÷' color ='orange' onPress={() => alert('!')}/>
       </View>
 
     </View>
