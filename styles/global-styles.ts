@@ -22,6 +22,7 @@ export const globalStyles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         paddingBottom: 20,
+        paddingHorizontal: 20,
     },
 
     normalText: {
@@ -48,7 +49,6 @@ export const globalStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: 18,
-        paddingHorizontal: 20
     },
 
     button: {
@@ -57,7 +57,7 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: Colors.darkGray,
         borderRadius: 100,
         justifyContent: 'center',
-        marginHorizontal: 10,
+        marginHorizontal: 6.5,
     },
 
     buttonText: {
