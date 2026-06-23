@@ -10,7 +10,6 @@ const { width } = Dimensions.get('window');
 const buttonSize = ( width - 80 ) / 4;
 
 
-
 export const globalStyles = StyleSheet.create({
 
     background: {

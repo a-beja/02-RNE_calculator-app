@@ -30,7 +30,7 @@ const CalculatorButton = ({
       style={({ pressed }) => ({
         ...globalStyles.button,
         backgroundColor: colorStyles[color],
-        opacity: pressed ? 0.8 : 1,
+        opacity: pressed ? 0.5 : 1,
         width: doubleSize ? 180 : 80,
       })}
       onPress={ onPress }
