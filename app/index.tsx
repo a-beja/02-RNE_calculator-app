@@ -17,8 +17,8 @@ const CalculatorApp = () => {
       
       {/* Resultados */}
       <View style={{ marginBottom: 20 }}>
-        <ThemeText variant='h1'>{ formula }</ThemeText>
-        <ThemeText variant='h2'>250000000000</ThemeText>
+        <ThemeText variant='h1'>{formula}</ThemeText>
+        <ThemeText variant='h2'>250000</ThemeText>
       </View>
 
       {/* Filas de botones */}
