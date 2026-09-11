@@ -18,7 +18,7 @@ export const useCalculator = () => {
     const lastOperation = useRef<Operator>(null);
 
     useEffect(() => {
-        // TODO: calcular subresultado
+        (global as any).number = number;
         setFormula( number );
     }, [ number ])
 
@@ -28,6 +28,22 @@ export const useCalculator = () => {
         setFormula('0')
 
         lastOperation.current = null;
+    }
+
+    const toggleSign = () => {
+        if( !number.includes('-')){
+            setNumber('-' + number );
+        } else {
+            setNumber( number.replace('-', '') );
+        }
+    }
+
+    const deleteLast = () => {
+        if( number.length === 1 ){
+            setNumber('0')
+        } else {
+            setNumber( number.slice(0, -1) );
+        }
     }
 
     const buildNumber = ( numberString: string ) => {
@@ -77,7 +93,8 @@ export const useCalculator = () => {
         // Methods
         buildNumber,
         clean,
-
+        toggleSign,
+        deleteLast,
     }
     
 }

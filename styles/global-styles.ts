@@ -31,6 +31,7 @@ export const globalStyles = StyleSheet.create({
     mainResult: {
         color: Colors.textPrimary,
         fontFamily: Fonts.fontFamily,
+        fontVariant: ['common-ligatures'],
         fontSize: Fonts.fontSize.large,
         textAlign: 'right',
         fontWeight: Fonts.fontWeight.normal,
@@ -39,6 +40,7 @@ export const globalStyles = StyleSheet.create({
     subResult: {
         color: Colors.textSecondary,
         fontFamily: Fonts.fontFamily,
+        fontVariant: ['common-ligatures'],
         fontSize: Fonts.fontSize.normal,
         textAlign: 'right',
         fontWeight: Fonts.fontWeight.light,
@@ -65,6 +67,7 @@ export const globalStyles = StyleSheet.create({
         fontSize: 30,
         color: Colors.textNormal,
         fontFamily: Fonts.fontFamily,
+        fontVariant: ['common-ligatures'],
         fontWeight: 300
     }
 });
