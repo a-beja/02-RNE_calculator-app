@@ -30,13 +30,13 @@ export const useCalculator = () => {
         lastOperation.current = null;
     }
 
-    const toggleSign = () => {
-        if( !number.includes('-')){
-            setNumber('-' + number );
-        } else {
-            setNumber( number.replace('-', '') );
-        }
-    }
+    // const toggleSign = () => {
+    //     if( !number.includes('-')){
+    //         setNumber('-' + number );
+    //     } else {
+    //         setNumber( number.replace('-', '') );
+    //     }
+    // }
 
     const deleteLast = () => {
         if( number.length === 1 ){
@@ -93,7 +93,7 @@ export const useCalculator = () => {
         // Methods
         buildNumber,
         clean,
-        toggleSign,
+        // toggleSign,
         deleteLast,
     }
     
