@@ -18,8 +18,7 @@ export const useCalculator = () => {
     }
 
     const buildFormula = (formulaString: string) => {
-        
-        if( formula === '0') return setFormula(formulaString);
+        if( formula === '0' && formulaString !== '.') return setFormula(formulaString);
         setFormula(formula + formulaString);
     }
 
