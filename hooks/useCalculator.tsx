@@ -1,100 +1,90 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
+import { evaluate } from 'mathjs';
 
-enum Operator {
-    add = '+',
-    subtract = '-',
-    multiply = 'x',
-    divide = '÷'
-}
 
 export const useCalculator = () => {
 
-    const [ formula, setFormula ] = useState('0');
+    const [formula, setFormula] = useState('0');
+    const [result, setResult] = useState(0);
 
-    const [ number, setNumber ] = useState('0');
-    const [ prevNumber, setPrevNumber ] = useState('0');
-
-    const lastOperation = useRef<Operator>(null);
-
+    
     useEffect(() => {
-        (global as any).number = number;
-        setFormula( number );
-    }, [ number ])
+        if( formula !== '0' ){
+            calculateResult();
+        }
+    }, )
 
-    const clean = () => {
-        setNumber('0');
-        setPrevNumber('0');
-        setFormula('0')
 
-        lastOperation.current = null;
+    const getLastNumber = (): string => {
+        // Separate each number (splited by operators) to get the last one
+        const parts = formula.split(/[+\-x÷]/);
+        return parts[ parts.length - 1 ];
     }
 
-    // const toggleSign = () => {
-    //     if( !number.includes('-')){
-    //         setNumber('-' + number );
-    //     } else {
-    //         setNumber( number.replace('-', '') );
-    //     }
-    // }
+    const clean = () => {
+        setFormula('0');
+    }
 
     const deleteLast = () => {
-        if( number.length === 1 ){
-            setNumber('0')
+        if (formula.length === 1) {
+            setFormula('0');
         } else {
-            setNumber( number.slice(0, -1) );
+            setFormula(formula.slice(0, -1));
         }
     }
 
-    const buildNumber = ( numberString: string ) => {
-        // Verificar si ya existe el punto decimal
-        if( number.includes('.') && numberString === ('.')) {
-            console.log('Se intentó digitar otro . además del ya existente. No se digita')
+    const buildFormula = ( newDigit: string ) => {
+        let lastNumber = getLastNumber();
+        
+        // To delete the first 0 when a new digit (not 0) is added, to have lastNumber = 5 instead = 05
+        if( lastNumber === '0' && newDigit !== '.'){
+            setFormula(formula.slice(0, -1) + newDigit);
             return;
         }
 
-        // Esto es para las verificaciones del mero inicio 
-        if( number.startsWith('0') || number.startsWith('-0')) {
-            // Si es un punto, seguir (después de esto, ya existe el único punto del number)
-            if( numberString === '.' ) {
-                console.log('Se digitó punto (Sólo puede haber uno por number)');
-                return setNumber( number + numberString );
-            }
-
-            // Evaluar si es otro cero y no hay punto
-            if( numberString === '0' && number.includes('.')) {
-                console.log('Hay un cero, pero después del punto')
-                return setNumber( number + numberString );
-            }
-
-            // Evaluar si es diferente de cero, no hay punto y es el primer número
-            if( numberString !== '0' && !number.includes('.') ) {
-                console.log('Aquí reemplaza el primer cero con un numero que sea diferente a 0, siempre y cuando no incluya un punto.');
-                return setNumber( numberString );
-            }
-
-            // Evitar el 000000.0
-            if( numberString === '0' && !number.includes('.')){
-                console.log('El usuario trata de digitar más 0 cuando no hay nada más. Debería de estar después de otro numero o de un punto');
-                return;
-            }
+        // To put a 0 before a point when lastNumber is empty
+        if( lastNumber === '' && newDigit === '.'){
+            return setFormula( formula + '0' + newDigit );
         }
 
-        setNumber( number + numberString )
+        // To avoid having more than one period
+        if( lastNumber.includes('.') && newDigit === '.' ){
+            console.log('hola, ya tengo un punto y quiero poner otro');
+            return;
+        }
+
+        // To avoid lastNumber = 0000 when it's not 0.000
+        if( lastNumber === '0' && newDigit === '0') return;
+        
+        setFormula( formula + newDigit );
     }
 
-    
+    const calculateResult = () => {
+        const operators = ['+', '-', 'x', '÷'];
+
+        let expr = formula;
+        
+        if( operators.some(op => expr.endsWith(op)) ){
+            expr = expr.slice(0, -1);
+        }
+
+        const expression = expr
+            .replace(/x/g, '*')
+            .replace(/÷/g, '/');
+        
+        const res = evaluate(expression);
+        const resFixed = parseFloat(res.toFixed(5));
+        setResult( resFixed );
+    }
+
     return {
-        // Props
         formula,
-        number,
-        prevNumber,
+        result,
 
-        // Methods
-        buildNumber,
+        buildFormula,
         clean,
-        // toggleSign,
         deleteLast,
+        calculateResult
     }
-    
 }

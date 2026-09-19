@@ -9,10 +9,11 @@ const CalculatorApp = () => {
 
   const {
     formula,
-    buildNumber,
+    result,
+    buildFormula,
     clean,
-    // toggleSign,
     deleteLast,
+    calculateResult,
   } = useCalculator();
 
   return (
@@ -20,8 +21,8 @@ const CalculatorApp = () => {
       
       {/* Resultados */}
       <View style={{ marginBottom: 20 }}>
-        <ThemeText variant='h1'>{formula}</ThemeText>
-        <ThemeText variant='h2'>250</ThemeText>
+        <ThemeText variant='h1' colorFormula>{formula}</ThemeText>
+        <ThemeText variant='h2'>{result}</ThemeText>
       </View>
 
       {/* Filas de botones */}
@@ -34,12 +35,6 @@ const CalculatorApp = () => {
             doubleSize={true}
             onPress={() => clean() }
           />
-          {/* <CalculatorButton 
-            label='+/-' 
-            color='lightGray' 
-            blackText={true} 
-            onPress={() => toggleSign() }
-          /> */}
           <CalculatorButton 
             label='←' 
             color='lightGray' 
@@ -49,42 +44,42 @@ const CalculatorApp = () => {
           <CalculatorButton 
             label='÷' 
             color ='cherry' 
-            onPress={() => console.log('!')}
+            onPress={() => buildFormula('÷')}
           />
         </View>
 
         <View style={ globalStyles.row }>
-          <CalculatorButton label='7' onPress={() => buildNumber('7')}/>
-          <CalculatorButton label='8' onPress={() => buildNumber('8')}/>
-          <CalculatorButton label='9' onPress={() => buildNumber('9')}/>
-          <CalculatorButton label='x' color='cherry' onPress={() => console.log('x')}/>
+          <CalculatorButton label='7' onPress={() => buildFormula('7')}/>
+          <CalculatorButton label='8' onPress={() => buildFormula('8')}/>
+          <CalculatorButton label='9' onPress={() => buildFormula('9')}/>
+          <CalculatorButton label='x' color='cherry' onPress={() => buildFormula('x')}/>
         </View>
         <View style={ globalStyles.row }>
-          <CalculatorButton label='4' onPress={() => buildNumber('4')}/>
-          <CalculatorButton label='5' onPress={() => buildNumber('5')}/>
-          <CalculatorButton label='6' onPress={() => buildNumber('6')}/>
-          <CalculatorButton label='-' color = 'cherry' onPress={() => console.log('-')}/>
+          <CalculatorButton label='4' onPress={() => buildFormula('4')}/>
+          <CalculatorButton label='5' onPress={() => buildFormula('5')}/>
+          <CalculatorButton label='6' onPress={() => buildFormula('6')}/>
+          <CalculatorButton label='-' color = 'cherry' onPress={() => buildFormula('-')}/>
         </View>
         <View style={ globalStyles.row }>
-          <CalculatorButton label='1' onPress={() => buildNumber('1')}/>
-          <CalculatorButton label='2' onPress={() => buildNumber('2')}/>
-          <CalculatorButton label='3' onPress={() => buildNumber('3')}/>
+          <CalculatorButton label='1' onPress={() => buildFormula('1')}/>
+          <CalculatorButton label='2' onPress={() => buildFormula('2')}/>
+          <CalculatorButton label='3' onPress={() => buildFormula('3')}/>
           
           <CalculatorButton 
             label='+' 
             color ='cherry' 
-            onPress={() => console.log('+')}
+            onPress={() => buildFormula('+')}
           />
         </View>
 
         <View style={ globalStyles.row }>
-          <CalculatorButton label='0' doubleSize={true} onPress={() => buildNumber('0')}/>
-          <CalculatorButton label='.' onPress={() => buildNumber('.')}/>
+          <CalculatorButton label='0' doubleSize={true} onPress={() => buildFormula('0')}/>
+          <CalculatorButton label='.' onPress={() => buildFormula('.')}/>
 
           <CalculatorButton 
             label='=' 
             color ='cherry' 
-            onPress={() => console.log('=')}
+            onPress={() => calculateResult() }
             />
         </View>
       </View>
