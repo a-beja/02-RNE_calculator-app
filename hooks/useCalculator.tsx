@@ -13,7 +13,7 @@ export const useCalculator = () => {
         if( formula !== '0' ){
             calculateResult();
         }
-    }, )
+    }, [formula] );
 
 
     const getLastNumber = (): string => {
