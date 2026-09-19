@@ -9,9 +9,11 @@ const CalculatorApp = () => {
 
   const {
     formula,
+    result,
     buildFormula,
     clean,
     deleteLast,
+    calculateResult,
   } = useCalculator();
 
   return (
@@ -20,7 +22,7 @@ const CalculatorApp = () => {
       {/* Resultados */}
       <View style={{ marginBottom: 20 }}>
         <ThemeText variant='h1' colorFormula>{formula}</ThemeText>
-        <ThemeText variant='h2'>250</ThemeText>
+        <ThemeText variant='h2'>{result}</ThemeText>
       </View>
 
       {/* Filas de botones */}
@@ -77,7 +79,7 @@ const CalculatorApp = () => {
           <CalculatorButton 
             label='=' 
             color ='cherry' 
-            onPress={() => console.log('=')}
+            onPress={() => calculateResult() }
             />
         </View>
       </View>
